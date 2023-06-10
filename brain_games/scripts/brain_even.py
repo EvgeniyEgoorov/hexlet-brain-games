@@ -9,7 +9,7 @@ def main():
     name = prompt.string("May I have your name? ")
     print(f"Hello, {name}")
 
-    print("Answer 'yes' if the number is even, otherwise answer 'no'.")
+    print('Answer "yes" if the number is even, otherwise answer "no".')
     correct_answers_counter = 0
 
     while correct_answers_counter != 3:
