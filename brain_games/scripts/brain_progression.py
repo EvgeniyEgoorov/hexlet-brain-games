@@ -19,13 +19,13 @@ def main():
         hidden_el_index = random.randint(0, 9)
         hidden_el = proggression[hidden_el_index]
         proggression[hidden_el_index] = ".."
-        progression= ' '.join(proggression)
+        progression = ' '.join(proggression)
 
         print(f"Question: {progression}")
 
         answer = prompt.string("Your answer: ")
 
-        if answer == hidden_el: 
+        if answer == hidden_el:
             print("Correct!")
             correct_answers_counter += 1
         else:
