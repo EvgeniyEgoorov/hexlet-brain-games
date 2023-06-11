@@ -18,7 +18,7 @@ def main():
     name = prompt.string("May I have your name? ")
     print(f"Hello, {name}")
 
-    print("Answer 'yes' if given number is prime. Otherwise answer 'no'.")
+    print('Answer "yes" if given number is prime. Otherwise answer "no".')
     correct_answers_counter = 0
 
     while correct_answers_counter != 3:
