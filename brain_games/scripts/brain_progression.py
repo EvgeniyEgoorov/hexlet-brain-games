@@ -30,8 +30,9 @@ def main():
             correct_answers_counter += 1
         else:
             print(
-                f"{answer} is wrong answer ;(. Correct answer was {hidden_el}.\
-                \nLet's try again, {name}!"
+                f"{answer} is wrong answer ;(. " +
+                f"Correct answer was {hidden_el}.\n" +
+                f"Let's try again, {name}!"
             )
             correct_answers_counter = 0
 
