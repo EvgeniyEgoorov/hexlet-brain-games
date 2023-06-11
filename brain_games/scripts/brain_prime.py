@@ -42,7 +42,7 @@ def main():
                 f"Correct answer was {correct_answer}.\n" +
                 f"Let's try again, {name}!"
             )
-            correct_answers_counter = 0
+            return
 
     print(f"Congratulations, {name}!")
 
