@@ -38,9 +38,9 @@ def main():
         else:
             correct_answer = "yes" if answer == "no" else "no"
             print(
-                f"{answer} is wrong answer ;(. " +
-                f"Correct answer was {correct_answer}.\n" +
-                f"Let's try again, {name}!"
+                f"{answer} is wrong answer ;(. "
+                + f"Correct answer was {correct_answer}.\n"
+                + f"Let's try again, {name}!"
             )
             return
 

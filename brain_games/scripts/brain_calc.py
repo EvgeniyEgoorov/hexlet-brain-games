@@ -33,9 +33,9 @@ def main():
             correct_answers_counter += 1
         else:
             print(
-                f"{answer} is wrong answer ;(. " +
-                f"Correct answer was {result}.\n" +
-                f"Let's try again, {name}!"
+                f"{answer} is wrong answer ;(. "
+                + f"Correct answer was {result}.\n"
+                + f"Let's try again, {name}!"
             )
             return
 

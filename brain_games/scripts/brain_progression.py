@@ -15,7 +15,7 @@ def main():
     while correct_answers_counter != 3:
         start = random.randint(1, 30)
         step = random.randint(1, 5)
-        proggression = [str(start + step*i) for i in range(10)]
+        proggression = [str(start + step * i) for i in range(10)]
         hidden_el_index = random.randint(0, 9)
         hidden_el = proggression[hidden_el_index]
         proggression[hidden_el_index] = ".."
@@ -30,9 +30,9 @@ def main():
             correct_answers_counter += 1
         else:
             print(
-                f"{answer} is wrong answer ;(. " +
-                f"Correct answer was {hidden_el}.\n" +
-                f"Let's try again, {name}!"
+                f"{answer} is wrong answer ;(. "
+                + f"Correct answer was {hidden_el}.\n"
+                + f"Let's try again, {name}!"
             )
             return
 
