@@ -3,7 +3,13 @@ import random
 import prompt
 
 
-def main():
+GAME_CONFIG = {
+    "win_target": 3,
+    "range": [1, 100]
+}
+
+
+def main(config=GAME_CONFIG):
     print("Welcome to the Brain Games!")
 
     name = prompt.string("May I have your name? ")
@@ -11,10 +17,11 @@ def main():
 
     print("Find the greatest common divisor of given numbers.")
     correct_answers_counter = 0
+    (range_start, range_end) = config["range"]
 
-    while correct_answers_counter != 3:
-        x = random.randint(1, 100)
-        y = random.randint(1, 100)
+    while correct_answers_counter != config["win_target"]:
+        x = random.randint(range_start, range_end)
+        y = random.randint(range_start, range_end)
         print(f"Question: {x} {y}")
 
         answer = prompt.string("Your answer: ")

@@ -3,7 +3,15 @@ import random
 import prompt
 
 
-def main():
+GAME_CONFIG = {
+    "win_target": 3,
+    "start_range": [1, 30],
+    "step_range": [1, 5],
+    "index_range": [0, 9]
+}
+
+
+def main(config=GAME_CONFIG):
     print("Welcome to the Brain Games!")
 
     name = prompt.string("May I have your name? ")
@@ -11,12 +19,15 @@ def main():
 
     print("What number is missing in the progression?")
     correct_answers_counter = 0
+    (start_range_from, start_range_to) = config["start_range"]
+    (step_range_from, step_range_to) = config["step_range"]
+    (index_range_from, index_range_to) = config["index_range"]
 
-    while correct_answers_counter != 3:
-        start = random.randint(1, 30)
-        step = random.randint(1, 5)
+    while correct_answers_counter != config["win_target"]:
+        start = random.randint(start_range_from, start_range_to)
+        step = random.randint(step_range_from, step_range_to)
         proggression = [str(start + step * i) for i in range(10)]
-        hidden_el_index = random.randint(0, 9)
+        hidden_el_index = random.randint(index_range_from, index_range_to)
         hidden_el = proggression[hidden_el_index]
         proggression[hidden_el_index] = ".."
         progression = ' '.join(proggression)

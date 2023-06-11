@@ -3,16 +3,22 @@ import random
 import prompt
 
 
-def check_if_number_prime(n):
-    if n <= 1:
+GAME_CONFIG = {
+    "win_target": 3,
+    "range": [1, 100]
+}
+
+
+def check_if_number_prime(num):
+    if num <= 1:
         return False
-    for i in range(2, int(n**0.5) + 1):
-        if n % i == 0:
+    for i in range(2, int(num**0.5) + 1):
+        if num % i == 0:
             return False
     return True
 
 
-def main():
+def main(config=GAME_CONFIG):
     print("Welcome to the Brain Games!")
 
     name = prompt.string("May I have your name? ")
@@ -20,9 +26,10 @@ def main():
 
     print('Answer "yes" if given number is prime. Otherwise answer "no".')
     correct_answers_counter = 0
+    (range_start, range_end) = config["range"]
 
-    while correct_answers_counter != 3:
-        number = random.randint(1, 100)
+    while correct_answers_counter != config["win_target"]:
+        number = random.randint(range_start, range_end)
 
         print(f"Question: {number}")
         answer = prompt.string("Your answer: ")

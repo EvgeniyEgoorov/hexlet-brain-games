@@ -3,7 +3,13 @@ import random
 import prompt
 
 
-def main():
+GAME_CONFIG = {
+    "win_target": 3,
+    "range": [1, 100]
+}
+
+
+def main(config=GAME_CONFIG):
     print("Welcome to the Brain Games!")
 
     name = prompt.string("May I have your name? ")
@@ -11,9 +17,10 @@ def main():
 
     print('Answer "yes" if the number is even, otherwise answer "no".')
     correct_answers_counter = 0
+    (range_start, range_end) = config["range"]
 
-    while correct_answers_counter != 3:
-        number = random.randint(1, 100)
+    while correct_answers_counter != config["win_target"]:
+        number = random.randint(range_start, range_end)
         is_even = True if number % 2 == 0 else False
 
         print(f"Question: {number}")
